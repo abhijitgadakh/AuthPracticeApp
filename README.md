@@ -19,7 +19,7 @@ A full-fledged authentication system built with MongoDB, Express, React, and Nod
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB with Mongoose ORM
 - **Authentication**: JSON Web Tokens (JWT), bcrypt
-- **Deployment**: Heroku (or any cloud hosting platform)
+- **Deployment**: Vercel
 
 ## Installation
 
@@ -70,26 +70,12 @@ A full-fledged authentication system built with MongoDB, Express, React, and Nod
 | POST   | `/auth/register` | Register a new user     |
 | POST   | `/auth/login`    | Login an existing user  |
 
-## Deployment
-
-1. Deploy the frontend to a cloud hosting platform (e.g., Netlify, Vercel).
-2. Deploy the backend to a cloud platform (e.g., Heroku, Render, AWS).
-3. Update API URLs in the frontend to point to the live backend.
-
-## Screenshots
-
-![Signup Page](./screenshots/signup.png)
-![Login Page](./screenshots/login.png)
 
 ## Future Enhancements
 
 - Add role-based authorization (admin, user).
 - Password reset functionality with email verification.
 - Profile management and edit features.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
