@@ -2,29 +2,30 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require("cors");
-const AuthRouter = require('./Routes/AuthRouter')
-const ProductRouter = require('./Routes/ProductRouter')
+const AuthRouter = require('./Routes/AuthRouter');
+const ProductRouter = require('./Routes/ProductRouter');
 
 require('dotenv').config();
 require("./config/db");
 const PORT = process.env.PORT || 8080;
 
+// CORS configuration: Allow only your frontend domain
 const corsOptions = {
-  origin: '*', // replace with your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, // if you want to allow cookies or authentication headers
+  origin: 'https://auth-practice-client.vercel.app', // no trailing slash
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // include OPTIONS for preflight requests
+  credentials: true, // allow credentials (cookies, headers, etc.)
 };
 
-app.get('/ping', (req, res)=>{
-    res.send("pong");
+app.use(cors(corsOptions)); // Ensure cors middleware is applied before routes
+
+app.get('/ping', (req, res) => {
+  res.send("pong");
 });
 
 app.use(bodyParser.json());
-// app.use(cors());
-app.use(cors(corsOptions));
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
   console.log("Server is running on port: " + PORT);
 });
