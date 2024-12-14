@@ -10,7 +10,7 @@ require("./config/db");
 const PORT = process.env.PORT || 8080;
 
 const corsOptions = {
-  origin: 'https://auth-practice-client.vercel.app/', // replace with your frontend URL
+  origin: '*', // replace with your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, // if you want to allow cookies or authentication headers
 };
