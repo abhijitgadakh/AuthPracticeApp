@@ -23,7 +23,8 @@ const SignUp = () => {
     }
 
     try {
-      const url = "http://localhost:8080/auth/register";
+      // const url = "http://localhost:8080/auth/register";
+      const url = "https://auth-practice-server-alpha.vercel.app/auth/register";
       const response = await fetch(url, {
         method: "POST",
         headers: {
